@@ -8,6 +8,8 @@ require (
 	github.com/alibabacloud-go/tea v1.1.15
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/stretchr/testify v1.7.0 // indirect
+	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.456
+	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/dnspod v1.0.456
 	gopkg.in/ini.v1 v1.66.2
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
 )
