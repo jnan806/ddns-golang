@@ -9,7 +9,7 @@
 
 此项目的诞生就是为了解决这一问题，及时有效的感知当前网络IP的变化，并且自动在域名提供商平台进行自动绑定。
 
-当前支持的运营商:Aliyun（阿里云）
+当前支持的运营商:Aliyun（阿里云）、Tencent（腾讯云）
 
 <br/><br/>
 ## 文档
@@ -79,7 +79,7 @@
 >  | 配置项           | 说明 
 >  | :---            | :---
 >  | [my-aliyun]     | 节点名称,在整个配置文件中 **【 不可重复 】**
->  | ispType         | ISP类型: 目前支持 aliyun(阿里云)
+>  | ispType         | ISP类型: 目前支持 aliyun(阿里云) tencent(腾讯云)
 >  | regionId        | ISP地区, 具体值需在对应 ISP 查询
 >  | accessKeyId     | 访问ISP 的 key，由 ISP 提供
 >  | accessKeySecret | 访问ISP 的 secret，由 ISP 提供
