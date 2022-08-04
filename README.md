@@ -10,7 +10,7 @@ But this series of operations is cumbersome, And we can't timely perceive that t
 
 This project was born to solve this problem, it can timely and effectively perceive the changes of IP, and it can automatically bind on the domain name provider platform.
 
-Currently supported ISP: Alibaba Cloud
+Currently supported ISP: Alibaba Cloud、Tencent Cloud
 
 <br/><br/>
 ## Document
@@ -81,7 +81,7 @@ See the [中文文档](./README_CN.md) for document in Chinese.
 >  | Config-Item     | Description
 >  | :---            | :---
 >  | [my-aliyun]     | Node name, in the whole configuration file **【 can't be repeated 】**
->  | ispType         | type of ISP: aliyun is supported. aliyun(Alibaba Cloud)
+>  | ispType         | type of ISP: aliyun、tencent is supported. aliyun(Alibaba Cloud) tencent(Tencent Cloud)
 >  | regionId        | regionId, provided by in ISP
 >  | accessKeyId     | the key to access ISP, provided by ISP
 >  | accessKeySecret | the secret to access ISP, provided by ISP
