@@ -1,0 +1,56 @@
+name: ddns-golang Release
+
+on:
+  release:
+#    types: ["published", "created", "edited", "prereleased", "released"]
+    types: ["edited", "prereleased", "released"]
+
+jobs:
+
+  build:
+    name: ddns-golang Release ( Go_${{ matrix.go_version }} )
+    permissions: write-all
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go_version:
+          - 1.16
+    steps:
+        
+    - name: Checkout From Github
+      uses: actions/checkout@v3
+
+    - name: Setup Go_${{ matrix.go_version }}
+      uses: actions/setup-go@v3
+      with:
+        go-version: ${{ matrix.go_version }}
+        
+    - name: Go mod download
+      run: go mod tidy -v
+        
+    - name: Install go ci lint & Run Linter
+      run: |
+        echo " ---- setp 1. Install go ci lint"
+        curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.27.0
+        echo " ---- setp 2. Run Linter"
+        golangci-lint run --timeout=10m -v --disable-all --enable=govet --enable=staticcheck --enable=ineffassign --enable=misspell
+
+    - name: Install ddns-golang
+      run: make install
+
+    - name: Set releaase env
+      id: release_env
+      run:
+        echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+
+    - name: Release ddns-golang.zip
+      uses: marvinpinto/action-automatic-releases@latest
+      with: 
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        automatic_release_tag: ${{ steps.release_env.outputs.VERSION }}
+        draft: false
+        prerelease: false
+        files: |
+          ddns-golang.zip
+      
+       
