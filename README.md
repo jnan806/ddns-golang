@@ -80,7 +80,7 @@ See the [中文文档](./README_CN.md) for document in Chinese.
 >```
 >  | Config-Item     | Description
 >  | :---            | :---
->  | [my-aliyun]     | Node name, in the whole configuration file **【 can't be repeated 】**
+>  | [my-aliyun]     | section name, in the whole configuration file **【 can't be repeated 】**
 >  | ispType         | type of ISP: aliyun、tencent is supported. aliyun(Alibaba Cloud) tencent(Tencent Cloud)
 >  | regionId        | regionId, provided by in ISP
 >  | accessKeyId     | the key to access ISP, provided by ISP
@@ -96,7 +96,7 @@ See the [中文文档](./README_CN.md) for document in Chinese.
 >```
 >  | Config-Item      | Description
 >  | :---             | :---
->  | [domainRecord.1] |  Node name, in the whole configuration file **【 can't be repeated 】**
+>  | [domainRecord.1] |  section name, in the whole configuration file **【 can't be repeated 】**
 >  | ispId            |  matched to sectionName of ISP in the above 
 >  | domain           |  DomainName
 >  | recordMapping    |  IP mapped to the record. In example, 192.168.0.1 is mapped to map1.bbb.com, multiple mappings can be set joined by comma,if IP isn't be given, the Internet IP will be mapped to the record
