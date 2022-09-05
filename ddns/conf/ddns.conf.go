@@ -22,10 +22,8 @@ type DomainRecordConfItem struct {
 }
 
 type DdnsConf struct {
-	Isps                 map[string]*IspConf
-	DomainRecords        map[string]*DomainRecordConfItem
-	AliyunsDomainRecords map[string]*DomainRecordConfItem
-	TencentDomainRecords map[string]*DomainRecordConfItem
+	Isps          map[string]*IspConf
+	DomainRecords map[string]*DomainRecordConfItem
 }
 
 var ddnsConf = DdnsConf{}
@@ -83,17 +81,6 @@ func loadDomainRecord(confFile *ini.File, section *ini.Section) {
 		}
 	}
 
-	if isp.IspType == "aliyun" {
-		if ddnsConf.AliyunsDomainRecords == nil {
-			ddnsConf.AliyunsDomainRecords = make(map[string]*DomainRecordConfItem)
-		}
-		ddnsConf.AliyunsDomainRecords[section.Name()] = tempDomainRecordItem
-	} else if isp.IspType == "tencent" {
-		if ddnsConf.TencentDomainRecords == nil {
-			ddnsConf.TencentDomainRecords = make(map[string]*DomainRecordConfItem)
-		}
-		ddnsConf.TencentDomainRecords[section.Name()] = tempDomainRecordItem
-	}
 	if ddnsConf.DomainRecords == nil {
 		ddnsConf.DomainRecords = make(map[string]*DomainRecordConfItem)
 	}
