@@ -43,7 +43,7 @@ See the [中文文档](./README_CN.md) for document in Chinese.
    Unzip ddns-golang.zip to get the following directory
 
     - ddns-golang
-        |- bin
+        |- scripts // directory of executable files
             |- ddns_386.exe         // windows   386 Executable file
             |- ddns_amd64.exe       // windows amd64 Executable file
             |- ddns_darwin          // macOs   amd64 Executable file
@@ -106,7 +106,8 @@ See the [中文文档](./README_CN.md) for document in Chinese.
 
 <br/><br/>
 ### How To Run
-Enter the ddns-golang/bin directory and execute the executable files of the corresponding operating system and platform to complete once binding.
+- Enter the ddns-golang/bin directory, and copy `the executable files of the corresponding operating system and platform` to the previous directory(which is the same with `conf`).
+- Execute the copied file directly, then will complete once binding
 ```
 attention: 
     In consideration of equipment performance, this project does not integrate scheduled tasks, 

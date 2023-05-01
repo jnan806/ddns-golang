@@ -41,7 +41,7 @@
     解压 ddns-golang.zip，得到如下结构
 
     - ddns-golang
-        |- bin
+        |- scripts  脚本目录
             |- ddns_386.exe         windows   386平台 可执行文件
             |- ddns_amd64.exe       windows amd64平台 可执行文件
             |- ddns_darwin          macOs   amd64平台 可执行文件
@@ -103,7 +103,8 @@
     
 <br/><br/>  
 ### 运行
-进入 ddns-golang/bin 目录，直接执行对应操作系统与平台的可执行文件即可完成一次绑定。
+- 进入 ddns-golang/scripts 目录，将`执行对应操作系统与平台的可执行文件`复制至上一层目录(即与`conf`位于同一层)
+- 然后，直接执行该脚本，即可完成一次绑定。
 ```
 注: 
     出于对设备性能的考虑，此项目并未集成定时任务，因此可执行文件仅为一次有效，
